@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get 'get_users', to: 'users#get_users'
 
+  get 'get_users', to: 'users#get_users'
+
 end
