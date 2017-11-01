@@ -1,0 +1,2 @@
+class CandidateCategory < ApplicationRecord
+end
