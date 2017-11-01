@@ -10,10 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031145435) do
+ActiveRecord::Schema.define(version: 20171101171832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "candidates", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "candidates_categories", force: :cascade do |t|
+    t.bigint "candidate_id"
+    t.bigint "category_id"
+    t.integer "years_of_experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_candidates_categories_on_candidate_id"
+    t.index ["category_id"], name: "index_candidates_categories_on_category_id"
+  end
+
+  create_table "candidates_skills", force: :cascade do |t|
+    t.bigint "candidate_id"
+    t.bigint "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_candidates_skills_on_candidate_id"
+    t.index ["skill_id"], name: "index_candidates_skills_on_skill_id"
+  end
+
+  create_table "candidates_studies", force: :cascade do |t|
+    t.bigint "candidate_id"
+    t.bigint "study_id"
+    t.bigint "college_id"
+    t.integer "degree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_candidates_studies_on_candidate_id"
+    t.index ["college_id"], name: "index_candidates_studies_on_college_id"
+    t.index ["study_id"], name: "index_candidates_studies_on_study_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "colleges", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
