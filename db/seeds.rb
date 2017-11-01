@@ -9,26 +9,30 @@
 # Create users
 user1 = User.find_or_initialize_by(email: 'zvi@spectory.com',
                      first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     password: '123qwe')
+                     last_name: Faker::Name.last_name)
+user1.password = '123qwe'
+user1.password_confirmation = '123qwe'
 user1.save!
 
 user2 = User.find_or_initialize_by(email: 'nadav@spectory.com',
                      first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     password: '123qwe')
+                     last_name: Faker::Name.last_name)
+user2.password = '123qwe'
+user2.password_confirmation = '123qwe'
 user2.save!
 
 user3 = User.find_or_initialize_by(email: 'michaelkisw@gmail.com',
                      first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     password: '123qwe')
+                     last_name: Faker::Name.last_name)
+user3.password = '123qwe'
+user3.password_confirmation = '123qwe'
 user3.save!
 
 user4 = User.find_or_initialize_by(email: 'lital@spectory.com',
                      first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     password: '123qwe')
+                     last_name: Faker::Name.last_name)
+user4.password = '123qwe'
+user4.password_confirmation = '123qwe'
 user4.save!
 
 # Create sources
