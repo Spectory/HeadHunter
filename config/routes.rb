@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   get 'get_users', to: 'users#get_users'
-
+  get 'get_candidates', to: 'candidate#get_candidates'
 end

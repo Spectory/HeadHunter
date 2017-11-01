@@ -19,6 +19,7 @@ gem 'devise', '~> 4.3'
 gem 'pg'
 gem 'dotenv', '~> 2.1', '>= 2.1.1'
 gem 'awesome_print', '~> 1.8'
+gem 'faker', '~> 1.6', '>= 1.6.6'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
